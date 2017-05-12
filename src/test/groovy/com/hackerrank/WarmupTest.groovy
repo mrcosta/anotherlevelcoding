@@ -21,7 +21,7 @@ class WarmupTest extends Specification {
         def pontuation = warmup.pontuate([5, 6, 7, 3, 6, 10])
 
         then:
-        pontuation == [1, 1]
+        pontuation == [1, 0]
     }
 
     def "should sum big integers"() {
