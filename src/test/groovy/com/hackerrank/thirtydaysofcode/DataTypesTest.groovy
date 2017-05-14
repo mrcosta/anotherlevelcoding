@@ -31,6 +31,6 @@ class DataTypesTest extends Specification {
         def result = dataTypes.concatenateStrings("hi from")
 
         then:
-        result == "HaxkerRank hi from"
+        result == "HackerRank hi from"
     }
 }
