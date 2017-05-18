@@ -3,21 +3,17 @@ package com.hackerrank.crackingthecodinginterview;
 public class MakingAnagrams {
 
     public int necessaryDeletionNumber(String firstWord, String secondWord) {
-        String biggestWord = firstWord.length() >= secondWord.length() ? firstWord : secondWord;
-        String smallestWord = firstWord.length() < secondWord.length() ? firstWord : secondWord;
+        StringBuilder biggestWordBuilder = new StringBuilder(firstWord.length() >= secondWord.length() ? firstWord : secondWord);
+        StringBuilder smallestWordBuilder = new StringBuilder(firstWord.length() < secondWord.length() ? firstWord : secondWord);
 
-        StringBuilder biggestWordBuilder = new StringBuilder(biggestWord);
-        StringBuilder toBeDeleted = new StringBuilder();
-
-        for (char letter : smallestWord.toCharArray()) {
+        for (char letter : smallestWordBuilder.toString().toCharArray()) {
             if (letterExistInWord(biggestWordBuilder, letter)) {
                 biggestWordBuilder.deleteCharAt(biggestWordBuilder.toString().indexOf(letter));
-            } else {
-                toBeDeleted.append(letter);
+                smallestWordBuilder.deleteCharAt(smallestWordBuilder.toString().indexOf(letter));
             }
         }
 
-        return biggestWordBuilder.length() + toBeDeleted.length();
+        return biggestWordBuilder.length() + smallestWordBuilder.length();
     }
 
     private boolean letterExistInWord(StringBuilder biggestWordBuilder, char letter) {
