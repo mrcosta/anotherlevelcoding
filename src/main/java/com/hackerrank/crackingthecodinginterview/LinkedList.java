@@ -25,6 +25,6 @@ public class LinkedList {
     }
 
     static class Node {
-        Node next;
+        public Node next;
     }
 }
