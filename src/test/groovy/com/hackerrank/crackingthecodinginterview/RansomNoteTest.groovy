@@ -16,4 +16,15 @@ class RansomNoteTest extends Specification {
         result == "Yes"
     }
 
+    def "should return no when is not possible to write ransom note"() {
+        def ransomNote = new RansomNote()
+        def magazineWords = ["give", "me", "one", "grand", "today", "night"]
+        def noteWords = ["give", "oi", "grand", "today"]
+
+        when:
+        def result = ransomNote.isPossibleToWriteNote(magazineWords, noteWords)
+
+        then:
+        result == "No"
+    }
 }

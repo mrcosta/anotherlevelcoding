@@ -22,18 +22,4 @@ public class MatrixDiagonalDifference {
 
         return Math.abs(firstDiagonal - secondDiagonal);
     }
-
-    public static void main(String args[]) {
-        Scanner in = new Scanner(System.in);
-        int amount = in.nextInt();
-        int[][] matrix = new int[amount][amount];
-
-        for (int i = 0; i < amount; i++) {
-            for (int j = 0; j < amount; j++) {
-                matrix[i][j] = in.nextInt();
-            }
-        }
-
-        System.out.println(Math.abs(new MatrixDiagonalDifference().getAbsoluteDifference(amount, matrix)));
-    }
 }

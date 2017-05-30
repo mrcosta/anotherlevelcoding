@@ -3,7 +3,6 @@ package com.hackerrank.thirtydaysofcode;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.Scanner;
 
 public class PlusMinus {
 
@@ -27,20 +26,5 @@ public class PlusMinus {
         return new String[]{String.format("%.6f", positivesPercentage),
                 String.format("%.6f", negativePercentage),
                 String.format("%.6f", zeroPercentage)};
-    }
-
-    public static void main(String args[]) {
-        Scanner scan = new Scanner(System.in);
-
-        int amount = scan.nextInt();
-        List<Integer> numbers = new ArrayList<>();
-
-        for (int i = 0; i < amount; i++) {
-          numbers.add(scan.nextInt());
-        }
-
-        for (String percentage: new PlusMinus().classificateNumbers(numbers)) {
-            System.out.println(percentage);
-        }
     }
 }
