@@ -24,7 +24,40 @@ public class LinkedList {
         return head == null;
     }
 
+    public int get(int position, Node head) {
+        int countPosition = 1;
+
+        while (countPosition != position && head.next != null) {
+            if (head.next != null) {
+               head = head.next;
+               countPosition++;
+            }
+        }
+
+        return head.value;
+    }
+
+    public void insertIn(int position, int value, Node head) {
+       int countPosition = 1;
+
+       while (countPosition != position -1 && head.next != null) {
+            if (head.next != null) {
+               head = head.next;
+               countPosition++;
+            }
+       }
+
+       Node newNode = new Node(value);
+       newNode.next = head.next;
+       head.next = newNode;
+    }
+
     static class Node {
+        public int value;
         public Node next;
+
+        Node(int value) {
+            this.value = value;
+        }
     }
 }
